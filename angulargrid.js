@@ -112,8 +112,7 @@
             infiniteScroll: '&agInfiniteScroll',
             infiniteScrollDistance: '=agInfiniteScrollDistance',
             infiniteScrollDelay: '=agInfiniteScrollDelay',
-            agCallback: '&',
-            agKiosk: '<'
+            agCallback: '&'
           },
           link: function(scope, element, attrs) {
             var domElm = element[0],
@@ -213,7 +212,6 @@
                 pageHeight = scrollContHeight * pageSize,
                 totalPages = Math.ceil(scrollBodyHeight / pageHeight),
                 pageNo = 0;
-
 
               for (pageNo = 0; pageNo < totalPages; pageNo++) {
                 for (var idx = 0, ln = listElmPosInfo.length; idx < ln; idx++) {
@@ -384,7 +382,7 @@
               });
               if (loadedImgPromises.length) {
                 $q.all(loadedImgPromises).then(onFullLoad, onFullLoad);
-              } else if (!scope.agKiosk) {
+              } else {
                 setTimeout(function() {
                   onFullLoad();
                 }, 0);
